@@ -10,6 +10,10 @@ Tumblful::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root :to => 'home#index'
+  
+  resources :image_links
+  resources :article_links
+  resources :text_posts
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
