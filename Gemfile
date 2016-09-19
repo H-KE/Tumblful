@@ -6,9 +6,6 @@ ruby '2.1.5'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
 
-# Use sqlite3 as the database for Active Record
-gem 'pg'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -42,6 +39,7 @@ end
 gem 'devise'
 
 group :development, :test do
+  gem 'sqlite3'
   # Use RSpec for testing: https://github.com/rspec/rspec-rails
   gem 'rspec-rails', '~> 2.0'
   # Use Factory Girl for Active Record sample instance object creation: https://github.com/thoughtbot/factory_girl/blob/master/GETTING_STARTED.md
