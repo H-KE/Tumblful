@@ -14,6 +14,7 @@ Tumblful::Application.routes.draw do
   resources :image_links
   resources :article_links
   resources :text_posts
+  resources :likes, :only => [:create]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

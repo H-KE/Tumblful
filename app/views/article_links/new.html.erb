@@ -1,11 +1,11 @@
-<%= form_for(@text_post) do |f| %>
+<%= form_for(@article_link) do |f| %>
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :post %><br>
-    <%= f.text_field :post %>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
   </div>
   <div class="actions">
     <%= f.submit %>

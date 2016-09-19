@@ -1,3 +1,5 @@
 <% @image_links.each do |image_link| %>
-  <%= content_tag :p, image_link.url %>
+    <%= content_tag :p, image_link.title %>
+    <%= content_tag :p, image_link.url %>
+    <%= image_tag(image_link.url) %>
 <% end %>

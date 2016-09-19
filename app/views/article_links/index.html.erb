@@ -1,0 +1,7 @@
+<%= link_to "Create article link", new_article_link_path %>
+<% @article_links.each do |text_post| %>
+  <%= content_tag :p, text_post.title %>
+  <p>
+    <%= link_to "Show", article_link_path(text_post) %> |
+  </p>
+<% end %>

@@ -1,0 +1,16 @@
+<%= content_tag :p, @article_link.title %>
+<%= content_tag :p, @article_link.url %>
+
+<span class='likes pull-left'>
+    <%= @article_link.likes.count %> likes
+</span>
+
+<%= form_for Like.new do |f| %>
+    <%= f.hidden_field :likeable_type, :value => @article_link.class %>
+    <%= f.hidden_field :likeable_id, :value => @article_link.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.submit "Like" %>
+<% end %>
+
+<%= link_to "Edit", edit_text_post_path(@article_link) %> |
+<%= link_to "Back", article_links_path %>

@@ -1,43 +1,43 @@
 class TextPostsController < ApplicationController
     def index
-        @text_posts = TextPosts.all
+        @text_posts = TextPost.all
     end
     
     def show
-        @text_posts = TextPosts.find(params[:id])
+        @text_post = TextPost.find(params[:id])
     end
     
     def new
-    
+        @text_post = TextPost.new
     end
     
     def edit
-        @text_posts = TextPosts.find(params[:id])
+        @text_post = TextPost.find(params[:id])
     end
     
     def create
-        @text_posts = TextPosts.new(text: params[:text_posts][:text], title: params[:text_posts][:title])
-        if @text_posts.save
+        @text_post = TextPost.new(post: params[:text_post][:post], title: params[:text_post][:title])
+        if @text_post.save
           redirect_to text_posts_path
         else
-          @errors = @text_posts.errors
+          @errors = @text_post.errors
           render :new
         end
     end
     
     def update
-        @text_posts = TextPosts.find(params[:id])
-        if @text_posts.update(link: params[:text_posts][:text], title: params[:text_posts][:title])
+        @text_post = TextPost.find(params[:id])
+        if @text_post.update(post: params[:text_post][:post], title: params[:text_post][:title])
           redirect_to text_posts_path
         else
-          @errors = @text_posts.errors
+          @errors = @text_post.errors
           render :edit
         end
     end
     
     def delete
-        @text_posts = TextPosts.find(params[:id])
-        @text_posts.destroy
+        @text_post = TextPost.find(params[:id])
+        @text_post.destroy
         redirect_to text_posts_path
     end
 end

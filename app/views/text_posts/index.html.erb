@@ -1,6 +1,7 @@
+<%= link_to "Create text post", new_text_post_path %>
 <% @text_posts.each do |text_post| %>
   <%= content_tag :p, text_post.title %>
   <p>
-    <%= link_to "Show", text_post_path(textpost) %> |
+    <%= link_to "Show", text_post_path(text_post) %> |
   </p>
 <% end %>
